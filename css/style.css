@@ -95,6 +95,9 @@ margin: 10%;
 
 
 nav{
+  position: fixed;
+  left:0;
+  top:350px;
   float:left;
   display: flex;
   flex-direction: column;
@@ -111,7 +114,7 @@ nav{
 nav > a{
   color: inherit;
   text-decoration: none;
-  height: 32px;
+  height: 48px;
   display: grid;
   grid-template-columns: auto 32px;
   grid-template-areas: "text icon";
@@ -119,6 +122,9 @@ nav > a{
   padding: 6px;
   line-height: 32px;
   color: inherit;
+  margin:0;
+  padding: 0;
+justify-content:  center;
 }
 
 nav > a:first-child{
@@ -147,7 +153,7 @@ nav > a:last-child:active{
   box-shadow: inset 0 1px 4px 0px var(--shadow-color);
 }
 
-nav > a > i{
+nav > a > i.icon{
   height: 100%;
   width: 100%;
   grid-area: icon;
@@ -155,4 +161,11 @@ nav > a > i{
   margin-right: auto;
   align-self: center;
   color:inherit;
+  border-left: 1px solid var(--white);
+}
+
+nav > a > i.icon > i{
+  margin:auto;
+  margin-top: 30%;
+  margin-bottom: auto;
 }
