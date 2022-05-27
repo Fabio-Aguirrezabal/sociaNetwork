@@ -2,7 +2,7 @@
 @import url('https://css.gg/games.css');
 @import url('https://css.gg/feed.css');
 @import url('https://css.gg/share.css');
-
+@import url('https://css.gg/image.css');
 
 /* fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
@@ -93,6 +93,11 @@ margin: 10%;
   height: 2048px;
 }
 
+div.banner > .profile-border > button.change-picture{
+  background-color: transparent;
+  border: none;
+  color: var(--white);
+}
 
 nav{
   position: fixed;
@@ -116,8 +121,9 @@ nav > a{
   text-decoration: none;
   height: 48px;
   display: grid;
-  grid-template-columns: auto 32px;
+  grid-template-columns: 16px auto 32px;
   grid-template-areas: "text icon";
+  flex-basis:100%;
   grid-gap: 5px;
   padding: 6px;
   line-height: 32px;
