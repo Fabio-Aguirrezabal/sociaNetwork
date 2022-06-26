@@ -1,10 +1,322 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>The Social Network</title>
+
+
+  <style media="screen">
+    @import 'css/lightColorScheme.css';
+
+    :root {
+
+      --black: #2D3047;
+      --sky-blue: #7899D4;
+      --dark-blue: #3B69BA;
+      --white: #FBFBFF;
+      --red: #DB5461;
+      --trademark-color: var(--sky-blue);
+      --alert: var(--red);
+
+      --main-color: var(--sky-blue);
+      --element-active: var(--dark-blue);
+
+      --text-color: var(--black);
+
+      --body-background: var(--white);
+      --left-panel-color: var(--main-color);
+      --left-panel-button-pressed: var(--element-active);
+
+      --shadow-color: var(--black);
+
+      --banner-height: 300px;
+    }
+
+    :root {
+      --Accent-Color: #3498db;
+      --Secondary-Color: #aaa;
+      --Primary-Color: #;
+
+      --font: arial;
+
+      --Font-Size-Regular: 16px;
+
+      --Font-Size-Small: 14px;
+    }
+
+    .trademark-style {
+      color: var(--trademark-color);
+
+    }
+
+    * {
+      font-family: var(--font);
+    }
+
+    div {
+      margin: 2rem
+    }
+
+    span {
+      margin: 2rem;
+    }
+
+    .form-group {
+      position: relative;
+    }
+
+    /* input Text and Bottom Margin Color */
+
+    input {
+      border: 0;
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      border-bottom-color: var(--Secondary-Color);
+      outline: none;
+      transition: 250ms;
+    }
+
+    input:focus {
+      border-bottom-color: var(--Accent-Color);
+    }
+
+    input:focus+.floating-label {
+      color: var(--Accent-Color);
+    }
+
+    .floating-label {
+      color: var(--Secondary-Color);
+      font-size: var(--Font-Size-Regular);
+      position: absolute;
+      left: 0;
+      transition: 250ms;
+    }
+
+    .floating-label-active {
+      transform: scale(0.9);
+      transform-origin: left;
+      transform: translateY(calc(-1*var(--Font-Size-Regular)));
+      transition-property: all;
+    }
+  </style>
+
+  <style media="screen">
+    body {
+      background: var(--black);
+    }
+
+    .center-floating-form {
+      box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .5);
+      width: 800px;
+      height: 550px;
+      margin-left: auto;
+      margin-right: auto;
+      background: var(--white);
+
+      display: grid;
+      grid-template-columns: 1.8fr 2px 1.3fr;
+
+      grid-template-areas: "info separator form";
+    }
+
+    .info {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      area: info;
+      display: grid;
+      grid-template-rows: auto 0.5fr;
+      grid-template-areas: "welcome-msg""news-ticker";
+    }
+
+    .welcome-message {
+      area: welcome-msg;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 0;
+      margin-bottom: 0;
+      height: 50%;
+      margin-top: 25%;
+      padding: 0;
+
+    }
+
+    .welcome-message>h1 {
+      margin-top: 0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .news-ticker {
+      area: news-ticker;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0;
+    }
+
+    .news-ticker>.header {
+      margin-top: 0;
+      height: 50px;
+      line-height: 50px;
+      padding: inherit;
+    }
+
+    .news-ticker>.content {
+      margin: inherit;
+      padding: inherit;
+    }
+
+    .vertical-line {
+      area: separator;
+      width: 50%;
+      height: 90%;
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-left: 0;
+      margin-right: 0;
+      background: var(--black);
+    }
+
+    .login {
+      width: 90%;
+      area: form;
+      display: flex;
+      margin-top: auto;
+      margin-bottom: auto;
+      flex-direction: column;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .login>img {
+      margin-left: auto;
+      margin-right: auto;
+      background: red;
+    }
+
+    .login>button {
+      width: 70%;
+      border-radius: 4px;
+      border: none;
+      line-height: 40px;
+      font-weight: bold;
+      background: var(--trademark-color);
+      color: var(--white);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .login>button:hover {
+      box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.5);
+      transition: 0.2s;
+      transform: scale(1.2);
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="center-floating-form">
+    <div class="info">
+      <div class="welcome-message ">
+        <h1 class="trademark-style">Welcome to The Social Network</h1>
+        <p>Please Login or create a new account and start making new friends or keep in touch with the old ones.</p>
+      </div>
+      <div class="news-ticker">
+        <h3 class="header">New feature!!!!</h3>
+        <div class="content">
+          <p><i><b>This allows for the use of bla bla bla news news news</b></i></p>
+        </div>
+      </div>
+
+    </div>
+    <div class="vertical-line"></div>
+
+    <form class="login" action="index.html" method="post">
+      <img src="" alt="this is a image" width="100px" height="100px">
+      <div style="width:100%; display:flex; flex-direction: column;">
+
+        <span class="form-group">
+          <input type="text" id="inputUsername" class="txtInput" name="Username" value="">
+        </span>
+
+        <span class="form-group">
+          <input type="password" id="name" class="txtInput" name="Label" value="">
+        </span>
+
+      </div>
+
+      <button type="button" class="login-btn" name="button">Login or Create a new Account</button>
+
+    </form>
+  </div>
+
+
+
+
+
+
+  <script type="text/javascript">
+    /* implementar esto como custom-tag en HTML */
+    function FloatingLabel() {
+      function onFocus() {
+        setLabelActive(this.floatingLabel);
+      }
+
+      function onBlur() {
+        setLabel(this);
+      }
+
+      function setLabelActive(label) {
+        label.classList.add("floating-label-active");
+      }
+
+      function setLabelInactive(label) {
+        label.classList.remove("floating-label-active");
+      }
+
+      function setLabel(input = {}) {
+        /* Implement warning for input when conditions not met */
+        if (input.value && input.value.lenght !== 0) {
+          setLabelActive(input.floatingLabel);
+        } else {
+          setLabelInactive(input.floatingLabel);
+        }
+      }
+
+      let inputList = document.querySelectorAll("input");
+
+      inputList.forEach((input, i) => {
+        let id = input.id;
+        let text = input.getAttribute("name");
+
+        let label = document.createElement("label");
+
+        label.setAttribute("for", id);
+        label.innerHTML = text;
+        label.classList.add("floating-label");
+
+        input.floatingLabel = label;
+        input.parentNode.appendChild(label);
+
+        input.addEventListener("focus", onFocus);
+        input.addEventListener("blur", onBlur);
+
+        setLabel(input);
+      });
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+      FloatingLabel();
+    });
+  </script>
+
+</body>
+
 </html>

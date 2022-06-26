@@ -1,0 +1,23 @@
+:root{
+
+  --black:#2D3047;
+  --sky-blue: #7899D4;
+  --dark-blue: #3B69BA;
+  --white: #FBFBFF;
+  --red: #DB5461;
+
+  --alert: var(--red);
+
+  --main-color: var(--sky-blue);
+  --element-active: var(--dark-blue);
+
+  --text-color: var(--black);
+
+  --body-background: var(--white);
+  --left-panel-color: var(--main-color);
+  --left-panel-button-pressed: var(--element-active);
+
+  --shadow-color:var(--black);
+
+  --banner-height:300px;
+}
