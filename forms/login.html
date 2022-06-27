@@ -12,11 +12,12 @@
     :root {
 
       --black: #2D3047;
-      --sky-blue: #7899D4;
+      --sky-blue: #9be9d7;
       --dark-blue: #3B69BA;
       --white: #FBFBFF;
       --red: #DB5461;
-      --trademark-color: var(--sky-blue);
+      --trademark-color: #3498db;
+      --trademark-color-dark:#3177a6;
       --alert: var(--red);
 
       --main-color: var(--sky-blue);
@@ -193,10 +194,18 @@
       margin-right: auto;
     }
 
-    .login>img {
+    .login>.profile-picture {
+      width: 100px;
+      height: 100px;
       margin-left: auto;
       margin-right: auto;
-      background: red;
+      background: url("../res/img/svg/Capital_U.svg");
+      background-repeat: no-repeat;
+      background-size: 50%;
+      background-position: center;
+      border-radius: 100%;
+      background-color: var(--trademark-color);
+
     }
 
     .login>button {
@@ -209,13 +218,25 @@
       color: var(--white);
       margin-left: auto;
       margin-right: auto;
+      transition: 0.1s;
+
     }
 
     .login>button:hover {
-      box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.5);
-      transition: 0.2s;
-      transform: scale(1.2);
+      box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0.5);
+      transition: 0.1s;
+      transform: scale(1.1);
+  border:0;
     }
+
+    .login>button:active {
+      box-shadow: inset 2px 2px 1px 0px rgba(0, 0, 0, 0.5);
+      transition: 0.1s;
+      transform: scale(.9);
+    border:0;
+    background-color: var(--trademark-color-dark);
+    }
+
   </style>
 
 </head>
@@ -229,9 +250,9 @@
         <p>Please Login or create a new account and start making new friends or keep in touch with the old ones.</p>
       </div>
       <div class="news-ticker">
-        <h3 class="header">New feature!!!!</h3>
+        <h3 class="header">New feature name added!!!!</h3>
         <div class="content">
-          <p><i><b>This allows for the use of bla bla bla news news news</b></i></p>
+          <p><i><b>This allows for the use of bla bla bla news news news this is all a farse</b></i></p>
         </div>
       </div>
 
@@ -239,7 +260,7 @@
     <div class="vertical-line"></div>
 
     <form class="login" action="index.html" method="post">
-      <img src="" alt="this is a image" width="100px" height="100px">
+      <div class="profile-picture"></div>
       <div style="width:100%; display:flex; flex-direction: column;">
 
         <span class="form-group">
