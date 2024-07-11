@@ -8,10 +8,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
-
+@import url(formStyle.css);
 :root{
 
-  --black:#2D3047;
+  --black:#1c1e35;
   --sky-blue: #7899D4;
   --dark-blue: #3B69BA;
   --white: #FBFBFF;
@@ -181,4 +181,38 @@ nav > a > label{
   grid-area: label;
   width:100%;
   text-align: left;
+}
+
+
+
+input {
+  border: 0;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--Secondary-Color);
+  outline: none;
+  transition: 250ms;
+}
+
+input:focus {
+  border-bottom-color: var(--Accent-Color);
+}
+
+input:focus+.floating-label {
+  color: var(--Accent-Color);
+}
+
+.floating-label {
+  color: var(--Secondary-Color);
+  font-size: var(--Font-Size-Regular);
+  position: absolute;
+  left: 0;
+  transition: 250ms;
+}
+
+.floating-label-active {
+  transform: scale(0.9);
+  transform-origin: left;
+  transform: translateY(calc(-1*var(--Font-Size-Regular)));
+  transition-property: all;
 }
